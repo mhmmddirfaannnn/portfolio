@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive birthday surprise — dibuat dengan penuh cinta." />
+  <meta name="theme-color" content="#0d0217" />
+  <title>Happy Birthday 💜</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230d0217'/><text x='50' y='72' font-size='48' text-anchor='middle'>💜</text></svg>" />
+
+  <!-- Google Fonts: Playfair Display (judul) + Poppins (teks) + Great Vibes (aksen script romantis) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="locked">
+
+  <!-- ============================================================
+       BACKGROUND: glow ungu + partikel cahaya (canvas dari script.js)
+       ============================================================ -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__glow bg__glow--1"></div>
+    <div class="bg__glow bg__glow--2"></div>
+    <div class="bg__glow bg__glow--3"></div>
+    <canvas id="particles"></canvas>
+  </div>
+
+  <!-- ============================================================
+       BABAK 1 — OPENING
+       Teks pembuka di bawah ini bisa langsung diedit di sini.
+       ============================================================ -->
+  <section id="screen-opening" class="screen is-active">
+    <div class="screen__inner">
+      <p class="eyebrow reveal-gate">— Ada sesuatu untukmu —</p>
+
+      <h1 class="script-title reveal-gate">Hello, my love</h1>
+
+      <p class="screen__text reveal-gate">
+        Aku membuat sesuatu yang spesial, hanya untukmu.<br />
+        Ada kejutan kecil di balik pintu ini…<br />
+        Maukah kamu membukanya?
+      </p>
+
+      <button class="btn reveal-gate" id="btn-start" type="button">
+        ✨ Buka Kejutannya ✨
+      </button>
+    </div>
+
+    <a href="#" class="scroll-hint" aria-hidden="true"><span></span></a>
+  </section>
+
+  <!-- ============================================================
+       BABAK 2 — PIN
+       PIN yang benar diatur di script.js (bagian CONFIG).
+       ============================================================ -->
+  <section id="screen-pin" class="screen">
+    <div class="screen__inner">
+
+      <span class="pin__lock reveal-gate" aria-hidden="true">🔐</span>
+
+      <h1 class="script-title pin__title reveal-gate">A secret just for you</h1>
+
+      <p class="screen__text pin__hint reveal-gate">
+        Masukkan <strong>8 digit angka spesial</strong> untuk membuka kejutan ini…
+      </p>
+
+      <div class="pin__panel reveal-gate" id="pin-panel">
+        <!-- Indikator digit (8 titik) -->
+        <div class="pin__dots" id="pin-dots" aria-label="Digit PIN yang dimasukkan">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+
+        <p class="pin__message" id="pin-message" role="status" aria-live="polite"></p>
+
+        <!-- Keypad -->
+        <div class="pin__keypad" role="group" aria-label="Keypad PIN">
+          <button type="button" data-digit="1">1</button>
+          <button type="button" data-digit="2">2</button>
+          <button type="button" data-digit="3">3</button>
+          <button type="button" data-digit="4">4</button>
+          <button type="button" data-digit="5">5</button>
+          <button type="button" data-digit="6">6</button>
+          <button type="button" data-digit="7">7</button>
+          <button type="button" data-digit="8">8</button>
+          <button type="button" data-digit="9">9</button>
+          <button type="button" data-digit="C" aria-label="Hapus semua">C</button>
+          <button type="button" data-digit="0">0</button>
+          <button type="button" data-digit="X" aria-label="Hapus satu digit">⌫</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KONTEN UTAMA — muncul setelah PIN benar
+       ============================================================ -->
+  <main id="content">
+
+    <!-- ============================================================
+         BABAK 3 — YOUR SPECIAL DAY
+         ============================================================ -->
+    <section id="special-day" class="section">
+      <div class="container container--narrow">
+        <p class="eyebrow reveal">— Babak pertama —</p>
+        <h2 class="big-title reveal">Your Special <span class="grad">Day</span></h2>
+
+        <div class="divider reveal" aria-hidden="true">✦ ⋆ ✦</div>
+
+        <p class="lead reveal" id="special-date">—</p>
+
+        <p class="body-text reveal">
+          Hari ini adalah hari di mana keajaiban kecil bernama <strong id="her-name-1">kamu</strong>
+          datang ke dunia. Hari di mana semesta memutuskan bahwa hidup akan
+          terasa lebih hangat, lebih cerah, dan jauh lebih indah.
+        </p>
+
+        <p class="body-text reveal">
+          Dan sejak hari itu juga, dunia punya alasan baru untuk tersenyum.
+        </p>
+
+        <span class="floating-heart reveal" aria-hidden="true">💜</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BABAK 4 — HAPPY BIRTHDAY (pesan panjang)
+         Edit paragraf di bawah ini langsung dari file HTML.
+         ============================================================ -->
+    <section id="birthday" class="section">
+      <div class="container container--narrow">
+        <h2 class="big-title reveal">Happy <span class="grad">Birthday</span></h2>
+
+        <div class="divider reveal" aria-hidden="true">🎂</div>
+
+        <p class="body-text reveal">
+          Selamat ulang tahun, sayang. Di hari spesial ini, izinkan aku
+          menyimpan sejenak semua kata yang selama ini terasa terlalu
+          biasa untuk diucapkan — dan mengubahnya menjadi sesuatu yang
+          sedikit lebih istimewa.
+        </p>
+        <p class="body-text reveal">
+          Terima kasih untuk setiap tawa yang kau berikan tanpa pernah
+          hitung-hitungan, untuk sabarmu menghadapiku di hari-hari
+          terbaik maupun terburukku, dan untuk cinta yang kau rawat
+          sepanjang waktu.
+        </p>
+        <p class="body-text reveal">
+          Semoga di tahun barumu ini, langit selalu berpihak padamu.
+          Semoga setiap mimpi yang kau bisikkan diam-diam menemukan
+          jalannya untuk terkabul. Dan semoga kau tahu — hidupku
+          terasa jauh lebih utuh sejak ada kamu di dalamnya.
+        </p>
+        <p class="body-text reveal">
+          Tumbuh terus, bersinar terus. Aku akan selalu di sini,
+          menemanimu di setiap babak cerita hidupmu.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BABAK 5–6 — OUR MEMORIES (14 FOTO memory wall)
+         CARA GANTI FOTO: cukup ganti file di assets/images/
+         (image1.jpeg s/d image14.jpeg) — tanpa mengubah kode ini.
+         Teks caption saat foto dibesarkan (lightbox) ada di atribut
+         data-caption pada tiap <figure>.
+         ============================================================ -->
+    <section id="memories" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">— Sepanjang perjalanan kita —</p>
+        <h2 class="big-title reveal">Our <span class="grad">Memories</span></h2>
+        <p class="section-sub reveal">Empat belas potongan kenangan yang tak akan pernah kulepaskan. <br />(ketuk foto untuk memperbesar)</p>
+
+        <div class="wall">
+
+          <figure class="photo reveal" data-caption="Kenangan pertama kita">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image1.jpeg" alt="Kenangan 1" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Tawa yang tak pernah membosankan">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image2.jpeg" alt="Kenangan 2" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Petualangan pertama">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image3.jpeg" alt="Kenangan 3" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Senja yang kita bagi">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image4.jpeg" alt="Kenangan 4" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Kopi dan cerita panjang">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image5.jpeg" alt="Kenangan 5" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Hujan, dan kamu di sampingku">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image6.jpeg" alt="Kenangan 6" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Perjalanan yang tak terlupakan">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image7.jpeg" alt="Kenangan 7" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Momen sederhana yang berarti">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image8.jpeg" alt="Kenangan 8" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Diam-diam aku memotretpmu">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image9.jpeg" alt="Kenangan 9" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Senyum favoritku sedunia">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image10.jpeg" alt="Kenangan 10" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Tanggal-tanggal kecil yang kuingat">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image11.jpeg" alt="Kenangan 11" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Berdua, cukup berdua">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image12.jpeg" alt="Kenangan 12" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="Cerita yang masih panjang">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image13.jpeg" alt="Kenangan 13" loading="lazy" />
+            </div>
+
+          </figure>
+
+          <figure class="photo reveal" data-caption="…dan masih banyak lagi">
+            <div class="photo__frame">
+              <div class="photo__ph" aria-hidden="true">📷</div>
+              <img src="assets/images/image14.jpeg" alt="Kenangan 14" loading="lazy" />
+            </div>
+
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BABAK 7 — A MOMENT FOR YOU (video)
+         CARA GANTI VIDEO: cukup ganti file di assets/video/video1.mp4
+         — otomatis tampil tanpa mengubah kode.
+         ============================================================ -->
+    <section id="moment" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">— Sekejap, untukmu —</p>
+        <h2 class="big-title reveal">A Moment <span class="grad">For You</span></h2>
+        <p class="section-sub reveal">Sekecil apapun ini, dibuat dengan sepenuh hati.</p>
+
+        <div class="video__frame reveal" id="video-frame">
+          <video id="birthday-video" controls preload="metadata" playsinline>
+            <source src="assets/video/video1.mp4" type="video/mp4" />
+            Browser kamu tidak mendukung pemutar video.
+          </video>
+
+          <!-- Placeholder otomatis muncul jika file video belum ada -->
+          <div class="video__ph" id="video-ph" hidden>
+            <span class="video__play" aria-hidden="true">▶</span>
+            <p>🎬 Video ucapan akan muncul di sini</p>
+            <small>file video: assets/video/video1.mp4</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BABAK 8 — BIRTHDAY WISHES
+         Edit isi kartu di bawah ini langsung dari file HTML.
+         ============================================================ -->
+    <section id="wishes" class="section">
+      <div class="container container--narrow">
+        <p class="eyebrow reveal">— Harapanku untukmu —</p>
+        <h2 class="big-title reveal">Birthday <span class="grad">Wishes</span></h2>
+
+        <div class="wish-card reveal">
+          <span class="wish-card__seal" aria-hidden="true">💌</span>
+          <ul class="wish-list">
+            <li>✨ <strong>Kesehatan</strong> — semoga tubuhmu selalu kuat dan hatimu selalu ringan.</li>
+            <li>🌈 <strong>Kebahagiaan</strong> — semoga tawamu selalu tulus, bukan sekadar basa-basi.</li>
+            <li>🚀 <strong>Mimpi</strong> — semoga semua yang kau impikan berani mendekat padamu.</li>
+            <li>💜 <strong>Cinta</strong> — semoga kau selalu merasa dicintai, termasuk olehku, setiap hari.</li>
+          </ul>
+          <p class="wish-card__sign">
+            Semua doa ini kucurkan dalam satu kalimat sederhana:<br />
+            <strong>selamat ulang tahun, cintaku.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BABAK 9 — HAPPY BIRTHDAY (emosional, sederhana)
+         ============================================================ -->
+    <section id="hb-again" class="section section--center">
+      <div class="container container--narrow">
+        <p class="candles reveal" aria-hidden="true">🕯️ 🎂 🕯️</p>
+        <h2 class="script-title reveal">Happy Birthday</h2>
+        <p class="body-text reveal">
+          Sekali lagi, sayang — karena sekali saja tidak pernah cukup
+          untuk sesesuatu seperti kamu.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BABAK 10 — WITH ALL MY LOVE
+         ============================================================ -->
+    <section id="with-love" class="section section--center">
+      <div class="container container--narrow">
+        <p class="eyebrow reveal">— Dari aku, untukmu —</p>
+        <h2 class="script-title grad-text reveal">With All My Love</h2>
+        <p class="body-text reveal">
+          Jika semua kata di website ini harus diringkas menjadi satu,
+          maka ringkasannya sederhana:
+        </p>
+        <p class="body-text reveal">
+          <em>Aku menyayangimu — hari ini, besok, dan selamanya.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BABAK 11 — ALWAYS & FOREVER (penutup + replay)
+         ============================================================ -->
+    <section id="forever" class="section section--center section--last">
+      <div class="container container--narrow">
+        <div class="forever__rings reveal" aria-hidden="true">💜 💞 💜</div>
+        <h2 class="script-title grad-text reveal">Always &amp; Forever</h2>
+        <p class="body-text reveal" id="closing-text">
+          Ini bukan akhir dari kejutan, tapi awal dari tahun-tahun
+          indah kita yang lain. Sampai jumpa di kejutan berikutnya. 😉
+        </p>
+
+        <div class="forever__actions reveal">
+          <button class="btn" id="btn-replay" type="button">↺ Start Again</button>
+        </div>
+
+        <p class="credit reveal">Made with 💜 by Irfan</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Canvas overlay confetti -->
+  <canvas id="celebrate" class="celebrate" aria-hidden="true"></canvas>
+
+  <!-- Lightbox untuk foto Our Memories -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" id="lightbox-close" type="button" aria-label="Tutup">✕</button>
+    <figure class="lightbox__figure">
+      <img id="lightbox-img" src="" alt="Foto kenangan diperbesar" />
+      <figcaption id="lightbox-cap"></figcaption>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
