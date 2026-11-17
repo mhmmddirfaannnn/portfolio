@@ -10,7 +10,7 @@
      ============================================================ */
   const CONFIG = {
     // Nama panggilan (muncul di babak "Your Special Day")
-    herName: 'kamu',
+    herName: 'KALINA MAULIDA',
 
     // Tanggal spesial (muncul di babak "Your Special Day")
     specialDate: '14 April 2005',

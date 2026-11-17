@@ -304,35 +304,6 @@ body.unlocked .screen {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Scroll hint di opening */
-.scroll-hint {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 26px;
-  height: 44px;
-  border: 2px solid rgba(240, 171, 252, 0.45);
-  border-radius: 14px;
-  display: flex;
-  justify-content: center;
-  padding-top: 8px;
-}
-
-.scroll-hint span {
-  width: 4px;
-  height: 9px;
-  border-radius: 3px;
-  background: var(--accent-2);
-  animation: wheel 1.6s ease-in-out infinite;
-}
-
-@keyframes wheel {
-  0%   { transform: translateY(0); opacity: 1; }
-  70%  { transform: translateY(12px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 0; }
-}
-
 /* ============================================================
    BUTTON
    ============================================================ */
