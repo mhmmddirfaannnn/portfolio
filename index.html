@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portofolio Mohamad Irfan Fahrudin — Mahasiswa Informatika & Creative Developer." />
-  <meta name="theme-color" content="#05070d" />
+  <meta name="theme-color" content="#04060d" />
   <title>Mohamad Irfan Fahrudin — Informatics Student &amp; Creative Developer</title>
 
-  <!-- Google Fonts: Poppins (heading) + Inter (body) -->
+  <!-- Google Fonts: Sora (display) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305070d'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%2322d3ee' font-family='Arial' font-weight='bold'>I</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2304060d'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%234a8cff' font-family='Arial' font-weight='bold'>I</text></svg>" />
 </head>
 <body>
 
@@ -23,7 +23,7 @@
   <!-- ===== Custom cursor glow ===== -->
   <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
-  <!-- ===== Futuristic background layers ===== -->
+  <!-- ===== Background dekoratif (halus, tidak mengganggu konten) ===== -->
   <div class="bg-layer" aria-hidden="true">
     <div class="bg-grid"></div>
     <div class="bg-orb bg-orb--1"></div>
@@ -35,7 +35,7 @@
   <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
     <nav class="container nav" aria-label="Navigasi utama">
-      <a href="#home" class="logo">IRFAN<span class="logo-dot"></span></a>
+      <a href="#home" class="logo">IRFAN<span class="logo-dot">.</span></a>
 
       <ul class="nav-menu" id="nav-menu">
         <li><a href="#home" class="nav-link active">Home</a></li>
@@ -62,7 +62,10 @@
 
         <!-- Kiri: teks -->
         <div class="hero__text">
-          <span class="hero__eyebrow" data-reveal>Hello, I'm</span>
+          <span class="hero__badge" data-reveal>
+            <span class="hero__badge-dot" aria-hidden="true"></span>
+            Mahasiswa Informatika &bull; Institut Teknologi Garut
+          </span>
 
           <h1 class="hero__name" data-reveal data-reveal-delay="0.08">
             Mohamad <span class="gradient-text">Irfan Fahrudin</span>
@@ -86,7 +89,7 @@
 
           <div class="hero__socials" data-reveal data-reveal-delay="0.4">
             <!-- GitHub -->
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+            <a href="https://github.com/mhmmddirfaannnn" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.05.78 2.13v3.16c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
             </a>
             <!-- Instagram -->
@@ -98,16 +101,30 @@
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.2 8h4.6v14.8H.2V8Zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.22c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.88-2.77 3.82v7.34H7.8V8Z"/></svg>
             </a>
           </div>
+
+          <dl class="hero__stats" data-reveal data-reveal-delay="0.48">
+            <div class="hero__stat">
+              <dt class="hero__stat-label">Projects</dt>
+              <dd class="hero__stat-value">05</dd>
+            </div>
+            <div class="hero__stat">
+              <dt class="hero__stat-label">Core Skills</dt>
+              <dd class="hero__stat-value">08</dd>
+            </div>
+            <div class="hero__stat">
+              <dt class="hero__stat-label">Student ID</dt>
+              <dd class="hero__stat-value">2506044</dd>
+            </div>
+          </dl>
         </div>
 
-        <!-- Kanan: visual profil futuristik -->
-        <div class="hero__visual" id="hero-visual" aria-hidden="true">
-          <div class="orbit orbit--1"><span class="orbit-dot"></span></div>
-          <div class="orbit orbit--2"></div>
+        <!-- Kanan: foto profil dengan frame modern -->
+        <div class="hero__visual" id="hero-visual" aria-hidden="false">
+          <div class="hero__ring" aria-hidden="true"></div>
 
-          <div class="profile-ring parallax" data-depth="14">
-            <div class="profile-circle">
-              <!-- GANTI: foto profil. Ganti src ke assets/profile.jpg -->
+          <div class="hero__photo parallax" data-depth="10" data-reveal="zoom">
+            <div class="hero__photo-frame">
+              <!-- Foto profil milik sendiri — jangan diganti -->
               <img src="assets/foto irfan.jpeg" alt="Foto profil Mohamad Irfan Fahrudin" />
             </div>
           </div>
@@ -129,16 +146,17 @@
     <section id="about" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="section-eyebrow">Get To Know Me</span>
+          <span class="section-eyebrow"><span class="section-eyebrow__num">01</span> Get To Know Me</span>
           <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
         </div>
 
         <div class="about__grid">
-          <!-- Kiri: card statistik -->
-          <aside class="about-card glass" data-reveal="left">
+          <!-- Kiri: foto + info card -->
+          <aside class="about-card" data-reveal="left">
             <div class="about-card__avatar">
-              <img src="assets/foto irfan.jpeg" alt="Foto profil" />
+              <img src="assets/foto irfan.jpeg" alt="Foto profil Mohamad Irfan Fahrudin" />
             </div>
+
             <dl class="about-stats">
               <div class="about-stat">
                 <dt class="about-stat__label">Student ID</dt>
@@ -171,6 +189,37 @@
               Saat ini saya terus mengembangkan kemampuan dalam HTML, CSS, JavaScript, C++,
               OpenGL, jaringan komputer, dan berbagai teknologi lainnya.
             </p>
+
+            <div class="about__highlights">
+              <div class="about-highlight">
+                <span class="about-highlight__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </span>
+                <div>
+                  <strong>Web Development</strong>
+                  <span>HTML, CSS, JavaScript</span>
+                </div>
+              </div>
+              <div class="about-highlight">
+                <span class="about-highlight__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M12 22V12"/><path d="m3 7 9 5 9-5"/></svg>
+                </span>
+                <div>
+                  <strong>Graphics &amp; 3D</strong>
+                  <span>C++, OpenGL</span>
+                </div>
+              </div>
+              <div class="about-highlight">
+                <span class="about-highlight__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </span>
+                <div>
+                  <strong>Design</strong>
+                  <span>UI/UX &amp; Graphic Design</span>
+                </div>
+              </div>
+            </div>
+
             <a href="assets/cv.pdf" download class="btn btn--primary magnetic mt-2">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="btn-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download CV
@@ -184,13 +233,13 @@
     <section id="skills" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="section-eyebrow">What I Know</span>
+          <span class="section-eyebrow"><span class="section-eyebrow__num">02</span> What I Know</span>
           <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
         </div>
 
         <div class="skills__grid">
 
-          <article class="skill-card glass" data-reveal data-reveal-delay="0">
+          <article class="skill-card" data-reveal data-reveal-delay="0">
             <div class="skill-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
@@ -200,7 +249,7 @@
             <span class="skill-percent">90%</span>
           </article>
 
-          <article class="skill-card glass" data-reveal data-reveal-delay="0.05">
+          <article class="skill-card" data-reveal data-reveal-delay="0.05">
             <div class="skill-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3h9l-1.5 15L12 21l-7.5-3L3 3h9Z"/><path d="M8 8h8l-.5 4H9l.3 3 2.7 1 2.7-1"/></svg>
             </div>
@@ -210,7 +259,7 @@
             <span class="skill-percent">85%</span>
           </article>
 
-          <article class="skill-card glass" data-reveal data-reveal-delay="0.1">
+          <article class="skill-card" data-reveal data-reveal-delay="0.1">
             <div class="skill-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4c-2 0-2 2-2 3s0 3-2 4c2 1 2 3 2 4s0 3 2 3"/><path d="M16 4c2 0 2 2 2 3s0 3 2 4c-2 1-2 3-2 4s0 3-2 3"/></svg>
             </div>
@@ -220,7 +269,7 @@
             <span class="skill-percent">75%</span>
           </article>
 
-          <article class="skill-card glass" data-reveal data-reveal-delay="0.15">
+          <article class="skill-card" data-reveal data-reveal-delay="0.15">
             <div class="skill-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
             </div>
@@ -230,7 +279,7 @@
             <span class="skill-percent">70%</span>
           </article>
 
-          <article class="skill-card glass" data-reveal data-reveal-delay="0.2">
+          <article class="skill-card" data-reveal data-reveal-delay="0.2">
             <div class="skill-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M12 22V12"/><path d="m3 7 9 5 9-5"/></svg>
             </div>
@@ -240,7 +289,7 @@
             <span class="skill-percent">70%</span>
           </article>
 
-          <article class="skill-card glass" data-reveal data-reveal-delay="0.25">
+          <article class="skill-card" data-reveal data-reveal-delay="0.25">
             <div class="skill-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="6" height="6" rx="1"/><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M8 5h8M5 8v8m14-8v8M8 19h8"/></svg>
             </div>
@@ -250,7 +299,7 @@
             <span class="skill-percent">75%</span>
           </article>
 
-          <article class="skill-card glass" data-reveal data-reveal-delay="0.3">
+          <article class="skill-card" data-reveal data-reveal-delay="0.3">
             <div class="skill-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
             </div>
@@ -260,7 +309,7 @@
             <span class="skill-percent">80%</span>
           </article>
 
-          <article class="skill-card glass" data-reveal data-reveal-delay="0.35">
+          <article class="skill-card" data-reveal data-reveal-delay="0.35">
             <div class="skill-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r="2"/><circle cx="19" cy="13" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="10" cy="19" r="2"/><path d="M12 2a10 10 0 0 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.6-1.4-.3-.4-.4-.8-.4-1.3 0-1.1.9-2 2-2h2.4A8 8 0 0 0 12 2Z"/></svg>
             </div>
@@ -278,18 +327,18 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="section-eyebrow">My Work</span>
+          <span class="section-eyebrow"><span class="section-eyebrow__num">03</span> My Work</span>
           <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
         </div>
 
         <div class="projects__grid">
 
-          <article class="project-card glass" data-reveal data-reveal-delay="0">
+          <article class="project-card" data-reveal data-reveal-delay="0">
             <div class="project-card__img">
               <img src="assets/project1.svg" alt="Preview project Personal Portfolio" loading="lazy" />
             </div>
             <div class="project-card__body">
-              <span class="project-card__number">01</span>
+              <span class="project-card__number" aria-hidden="true">01</span>
               <h3>Personal Portfolio</h3>
               <p>Website portofolio pribadi dengan desain modern dan responsive.</p>
               <div class="project-card__tags">
@@ -303,17 +352,18 @@
             </div>
           </article>
 
-          <article class="project-card glass" data-reveal data-reveal-delay="0.16">
+          <article class="project-card" data-reveal data-reveal-delay="0.08">
             <div class="project-card__img">
               <img src="assets/project2.svg" alt="Preview project OpenGL Graphics" loading="lazy" />
             </div>
             <div class="project-card__body">
-              <span class="project-card__number">02</span>
+              <span class="project-card__number" aria-hidden="true">02</span>
               <h3>OpenGL Graphics</h3>
               <p>Eksperimen grafik komputer menggunakan C++ dan OpenGL.</p>
               <div class="project-card__tags">
                 <span>C++</span><span>OpenGL</span>
               </div>
+              <!-- GANTI: link project ke repository/demo asli -->
               <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="project-card__link">
                 View Project
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -321,17 +371,18 @@
             </div>
           </article>
 
-          <article class="project-card glass" data-reveal data-reveal-delay="0.16">
+          <article class="project-card" data-reveal data-reveal-delay="0.16">
             <div class="project-card__img">
               <img src="assets/project3.svg" alt="Preview project Networking Project" loading="lazy" />
             </div>
             <div class="project-card__body">
-              <span class="project-card__number">03</span>
+              <span class="project-card__number" aria-hidden="true">03</span>
               <h3>Networking Project</h3>
               <p>Project pembelajaran jaringan komputer dan konfigurasi jaringan.</p>
               <div class="project-card__tags">
                 <span>Networking</span><span>TCP/IP</span>
               </div>
+              <!-- GANTI: link project ke repository/demo asli -->
               <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="project-card__link">
                 View Project
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -339,17 +390,18 @@
             </div>
           </article>
 
-          <article class="project-card glass" data-reveal data-reveal-delay="0.24">
+          <article class="project-card" data-reveal data-reveal-delay="0.24">
             <div class="project-card__img">
               <img src="assets/project4.svg" alt="Preview project Web Development" loading="lazy" />
             </div>
             <div class="project-card__body">
-              <span class="project-card__number">04</span>
+              <span class="project-card__number" aria-hidden="true">04</span>
               <h3>Web Development</h3>
               <p>Project pengembangan website menggunakan HTML, CSS, dan JavaScript.</p>
               <div class="project-card__tags">
                 <span>HTML</span><span>CSS</span><span>JavaScript</span>
               </div>
+              <!-- GANTI: link project ke repository/demo asli -->
               <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="project-card__link">
                 View Project
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -357,15 +409,15 @@
             </div>
           </article>
 
-          <!-- PROJECT 05: BIRTHDAY WEBSITE (projects/ucapan-ulang-tahun) -->
-          <article class="project-card glass" data-reveal data-reveal-delay="0.32">
+          <!-- PROJECT 05: BIRTHDAY WEBSITE (projects/ucapan-ulang-tahun) — card unggulan -->
+          <article class="project-card project-card--featured" data-reveal data-reveal-delay="0.32">
             <div class="project-card__img">
               <!-- Placeholder preview (pola sama dengan placeholder project lain).
                    GANTI nanti dengan gambar preview asli jika sudah tersedia. -->
               <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'><defs><radialGradient id='bg' cx='30%25' cy='20%25' r='100%25'><stop offset='0%25' stop-color='%23101c30'/><stop offset='100%25' stop-color='%2305070d'/></radialGradient><linearGradient id='ac' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%2322d3ee'/><stop offset='100%25' stop-color='%233b82f6'/></linearGradient><pattern id='grid' width='40' height='40' patternUnits='userSpaceOnUse'><path d='M40 0H0V40' fill='none' stroke='rgba(34,211,238,0.08)' stroke-width='1'/></pattern></defs><rect width='800' height='450' fill='url(%23bg)'/><rect width='800' height='450' fill='url(%23grid)'/><circle cx='660' cy='90' r='140' fill='rgba(34,211,238,0.06)'/><circle cx='120' cy='380' r='110' fill='rgba(59,130,246,0.08)'/><g font-family='Arial, sans-serif' text-anchor='middle'><text x='400' y='215' font-size='46' font-weight='bold' fill='url(%23ac)'>PROJECT 05</text><text x='400' y='255' font-size='17' fill='%238b94a7' letter-spacing='3'>BIRTHDAY WEBSITE - HTML / CSS / JS</text><rect x='330' y='285' width='140' height='4' rx='2' fill='url(%23ac)' opacity='0.6'/></g></svg>" alt="Preview project Ucapan Ulang Tahun" loading="lazy" />
             </div>
             <div class="project-card__body">
-              <span class="project-card__number">05</span>
+              <span class="project-card__number" aria-hidden="true">05</span>
               <h3>Ucapan Ulang Tahun</h3>
               <p>Website kejutan interaktif dengan alur sinematik, halaman PIN, memory wall 14 foto, dan video ucapan.</p>
               <div class="project-card__tags">
@@ -387,14 +439,14 @@
     <section id="education" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="section-eyebrow">My Background</span>
+          <span class="section-eyebrow"><span class="section-eyebrow__num">04</span> My Background</span>
           <h2 class="section-title">Education <span class="gradient-text">Journey</span></h2>
         </div>
 
         <div class="timeline">
           <div class="timeline__item" data-reveal="left">
             <div class="timeline__node"></div>
-            <div class="timeline__content glass">
+            <div class="timeline__content">
               <span class="timeline__tag">Sebelumnya</span>
               <h3>SMKN 4 Garut</h3>
               <p>Jurusan Animasi</p>
@@ -402,7 +454,7 @@
           </div>
           <div class="timeline__item" data-reveal="right">
             <div class="timeline__node"></div>
-            <div class="timeline__content glass">
+            <div class="timeline__content">
               <span class="timeline__tag">Saat Ini</span>
               <h3>INSTITUT TEKNOLOGI GARUT</h3>
               <p>Program Studi Informatika &bull; Kelas B</p>
@@ -416,7 +468,7 @@
     <section id="journey" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="section-eyebrow">Milestones</span>
+          <span class="section-eyebrow"><span class="section-eyebrow__num">05</span> Milestones</span>
           <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
         </div>
 
@@ -449,13 +501,13 @@
     <section id="contact" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="section-eyebrow">Let's Work Together</span>
+          <span class="section-eyebrow"><span class="section-eyebrow__num">06</span> Let's Work Together</span>
           <h2 class="section-title">Have a project in mind?<br /><span class="gradient-text">Let's create something amazing.</span></h2>
         </div>
 
         <div class="contact__grid">
           <!-- Form -->
-          <form class="contact-form glass" id="contact-form" data-reveal="left" novalidate>
+          <form class="contact-form" id="contact-form" data-reveal="left" novalidate>
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required minlength="2" />
@@ -477,8 +529,7 @@
 
           <!-- Info kontak -->
           <div class="contact-info" data-reveal="right">
-            <!-- GANTI: email asli Anda -->
-            <a href="mailto:ipanelhannan@gmail.com" class="contact-card glass">
+            <a href="mailto:ipanelhannan@gmail.com" class="contact-card">
               <span class="contact-card__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
               </span>
@@ -487,8 +538,7 @@
                 <span>ipanelhannan@gmail.com</span>
               </span>
             </a>
-            <!-- GANTI: username Instagram Anda -->
-            <a href="https://instagram.com/mhmmdd_irfannn" target="_blank" rel="noopener noreferrer" class="contact-card glass">
+            <a href="https://instagram.com/mhmmdd_irfannn" target="_blank" rel="noopener noreferrer" class="contact-card">
               <span class="contact-card__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
               </span>
@@ -497,8 +547,7 @@
                 <span>mhmmdd_irfannn</span>
               </span>
             </a>
-            <!-- GANTI: username GitHub Anda -->
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="contact-card glass">
+            <a href="https://github.com/mhmmddirfaannnn" target="_blank" rel="noopener noreferrer" class="contact-card">
               <span class="contact-card__icon">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.05.78 2.13v3.16c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
               </span>
@@ -512,7 +561,7 @@
       </div>
     </section>
 
-  </main>`
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
@@ -521,7 +570,7 @@
       <p class="footer__tagline">Informatics Student &bull; Creative Developer</p>
 
       <div class="footer__socials">
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+        <a href="https://github.com/mhmmddirfaannnn" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.05.78 2.13v3.16c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
         </a>
         <a href="https://instagram.com/mhmmdd_irfannn" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
