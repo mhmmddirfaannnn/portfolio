@@ -8,11 +8,23 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ==========================================================
-     1. NAVBAR — scroll effect
+     1. NAVBAR — scroll effect + deteksi tema light otomatis
      ========================================================== */
   const navbar = document.getElementById('navbar');
   const scrollProgress = document.getElementById('scroll-progress');
   const backToTop = document.getElementById('back-to-top');
+
+  // Pill navbar menjadi light glass saat berada di atas section terang.
+  // Section/kontainer terang diberi atribut data-nav-light di HTML.
+  function updateNavbarLight() {
+    const probes = document.querySelectorAll('[data-nav-light]');
+    let light = false;
+    for (let i = 0; i < probes.length; i++) {
+      const r = probes[i].getBoundingClientRect();
+      if (r.top <= 80 && r.bottom >= 30) { light = true; break; }
+    }
+    navbar.classList.toggle('light', light);
+  }
 
   function onScroll() {
     const y = window.scrollY;
@@ -26,6 +38,8 @@
 
     // Back to top
     backToTop.classList.toggle('visible', y > 600);
+
+    updateNavbarLight();
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -40,6 +54,7 @@
      ========================================================== */
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
+  const navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
 
   function closeMenu() {
     hamburger.classList.remove('open');
@@ -57,27 +72,44 @@
     document.body.classList.toggle('no-scroll', isOpen);
   });
 
-  // Tutup menu saat link diklik
+  // Klik link: set status aktif segera, lalu tutup menu mobile
   navMenu.querySelectorAll('.nav-link').forEach(function (link) {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', function () {
+      navLinks.forEach(function (l) { l.classList.toggle('active', l === link); });
+      closeMenu();
+    });
   });
 
   /* ==========================================================
-     3. ACTIVE NAVIGATION (scroll spy)
+     4. ACTIVE NAVIGATION (scroll spy) — 4 menu utama
      ========================================================== */
   const sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
-  const navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+
+  // Pemetaan section -> menu navbar (Skills/Education/Journey bagian dari About)
+  const sectionToNav = {
+    home: 'home',
+    about: 'about',
+    skills: 'about',
+    portfolio: 'projects',
+    projects: 'projects',
+    education: 'about',
+    journey: 'about',
+    contact: 'contact'
+  };
+
+  function setActiveNav(navId) {
+    navLinks.forEach(function (link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + navId);
+    });
+  }
 
   if ('IntersectionObserver' in window) {
     const spy = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          // Journey tidak punya menu sendiri — petakan ke Education
-          const id = entry.target.id === 'journey' ? 'education' : entry.target.id;
-          navLinks.forEach(function (link) {
-            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-          });
+          const navId = sectionToNav[entry.target.id] || entry.target.id;
+          setActiveNav(navId);
         });
       },
       { rootMargin: '-45% 0px -50% 0px' }
@@ -187,7 +219,7 @@
           vx: (Math.random() - 0.5) * 0.18,
           vy: (Math.random() - 0.5) * 0.18,
           alpha: Math.random() * 0.5 + 0.15,
-          cyan: Math.random() > 0.35,
+          kind: Math.random(), // menentukan warna partikel
         });
       }
     }
@@ -208,9 +240,16 @@
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = p.cyan
-          ? 'rgba(34, 211, 238, ' + p.alpha + ')'
-          : 'rgba(59, 130, 246, ' + p.alpha + ')';
+        // Palet: biru utama, biru muda, teal; pink sangat jarang sebagai aksen
+        if (p.kind < 0.55) {
+          ctx.fillStyle = 'rgba(60, 132, 246, ' + p.alpha + ')';   // biru
+        } else if (p.kind < 0.85) {
+          ctx.fillStyle = 'rgba(138, 182, 255, ' + p.alpha + ')';  // biru muda
+        } else if (p.kind < 0.96) {
+          ctx.fillStyle = 'rgba(16, 185, 129, ' + p.alpha + ')';   // teal
+        } else {
+          ctx.fillStyle = 'rgba(236, 72, 153, ' + p.alpha + ')';   // pink (aksen langka)
+        }
         ctx.fill();
       }
 
@@ -299,7 +338,20 @@
   }
 
   /* ==========================================================
-     10. CONTACT FORM (demo — tanpa backend)
+     10. PROJECT CARD SPOTLIGHT — cahaya radial mengikuti kursor
+     ========================================================== */
+  if (!reduceMotion) {
+    document.querySelectorAll('.project-card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+      });
+    });
+  }
+
+  /* ==========================================================
+     11. CONTACT FORM (demo — tanpa backend)
      ========================================================== */
   const form = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');

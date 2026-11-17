@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portofolio Mohamad Irfan Fahrudin — Mahasiswa Informatika & Creative Developer." />
-  <meta name="theme-color" content="#04060d" />
+  <meta name="theme-color" content="#050510" />
   <title>Mohamad Irfan Fahrudin — Informatics Student &amp; Creative Developer</title>
 
   <!-- Google Fonts: Sora (display) + Inter (body) -->
@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2304060d'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%234a8cff' font-family='Arial' font-weight='bold'>I</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23050510'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%233c84f6' font-family='Arial' font-weight='bold'>I</text></svg>" />
 </head>
 <body>
 
@@ -32,21 +32,19 @@
     <canvas id="particles"></canvas>
   </div>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- ===== NAVBAR — pill glass melayang + maskot ===== -->
   <header class="navbar" id="navbar">
-    <nav class="container nav" aria-label="Navigasi utama">
+    <nav class="nav" id="nav" aria-label="Navigasi utama">
+
       <a href="#home" class="logo">IRFAN<span class="logo-dot">.</span></a>
+      <span class="nav-divider" aria-hidden="true"></span>
 
       <ul class="nav-menu" id="nav-menu">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-
-      <a href="#contact" class="btn btn--outline btn--sm nav-cta magnetic">Let's Talk</a>
 
       <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
@@ -101,21 +99,6 @@
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.2 8h4.6v14.8H.2V8Zm7.6 0h4.4v2h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04v8.14h-4.6v-7.22c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.88-2.77 3.82v7.34H7.8V8Z"/></svg>
             </a>
           </div>
-
-          <dl class="hero__stats" data-reveal data-reveal-delay="0.48">
-            <div class="hero__stat">
-              <dt class="hero__stat-label">Projects</dt>
-              <dd class="hero__stat-value">05</dd>
-            </div>
-            <div class="hero__stat">
-              <dt class="hero__stat-label">Core Skills</dt>
-              <dd class="hero__stat-value">08</dd>
-            </div>
-            <div class="hero__stat">
-              <dt class="hero__stat-label">Student ID</dt>
-              <dd class="hero__stat-value">2506044</dd>
-            </div>
-          </dl>
         </div>
 
         <!-- Kanan: foto profil dengan frame modern -->
@@ -137,16 +120,13 @@
         </div>
       </div>
 
-      <a href="#about" class="scroll-down" aria-label="Scroll ke bawah">
-        <span class="scroll-down__mouse"><span class="scroll-down__wheel"></span></span>
-      </a>
     </section>
 
     <!-- ===== ABOUT ===== -->
     <section id="about" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="section-eyebrow"><span class="section-eyebrow__num">01</span> Get To Know Me</span>
+          <span class="section-eyebrow">Get To Know Me</span>
           <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
         </div>
 
@@ -233,7 +213,7 @@
     <section id="skills" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="section-eyebrow"><span class="section-eyebrow__num">02</span> What I Know</span>
+          <span class="section-eyebrow">What I Know</span>
           <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
         </div>
 
@@ -323,11 +303,73 @@
       </div>
     </section>
 
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-eyebrow">My Background</span>
+          <h2 class="section-title">Education <span class="gradient-text">Journey</span></h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__item" data-reveal="left">
+            <div class="timeline__node"></div>
+            <div class="timeline__content">
+              <span class="timeline__tag">Sebelumnya</span>
+              <h3>SMKN 4 Garut</h3>
+              <p>Jurusan Animasi</p>
+            </div>
+          </div>
+          <div class="timeline__item" data-reveal="right">
+            <div class="timeline__node"></div>
+            <div class="timeline__content">
+              <span class="timeline__tag">Saat Ini</span>
+              <h3>INSTITUT TEKNOLOGI GARUT</h3>
+              <p>Program Studi Informatika &bull; Kelas B</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE / JOURNEY ===== -->
+    <section id="journey" class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-eyebrow">Milestones</span>
+          <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+        </div>
+
+        <div class="journey__track">
+          <div class="journey__item" data-reveal data-reveal-delay="0">
+            <span class="journey__year gradient-text">2023</span>
+            <div class="journey__dot"></div>
+            <p>Started learning creative design and animation.</p>
+          </div>
+          <div class="journey__item" data-reveal data-reveal-delay="0.1">
+            <span class="journey__year gradient-text">2024</span>
+            <div class="journey__dot"></div>
+            <p>Developed interest in programming and technology.</p>
+          </div>
+          <div class="journey__item" data-reveal data-reveal-delay="0.2">
+            <span class="journey__year gradient-text">2025</span>
+            <div class="journey__dot"></div>
+            <p>Started studying Informatics.</p>
+          </div>
+          <div class="journey__item" data-reveal data-reveal-delay="0.3">
+            <span class="journey__year gradient-text">2026</span>
+            <div class="journey__dot"></div>
+            <p>Developing web, graphics, networking, and programming skills.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== PROJECTS ===== -->
     <section id="projects" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="section-eyebrow"><span class="section-eyebrow__num">03</span> My Work</span>
+          <span class="section-eyebrow">My Work</span>
           <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
         </div>
 
@@ -435,73 +477,11 @@
       </div>
     </section>
 
-    <!-- ===== EDUCATION ===== -->
-    <section id="education" class="section">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="section-eyebrow"><span class="section-eyebrow__num">04</span> My Background</span>
-          <h2 class="section-title">Education <span class="gradient-text">Journey</span></h2>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline__item" data-reveal="left">
-            <div class="timeline__node"></div>
-            <div class="timeline__content">
-              <span class="timeline__tag">Sebelumnya</span>
-              <h3>SMKN 4 Garut</h3>
-              <p>Jurusan Animasi</p>
-            </div>
-          </div>
-          <div class="timeline__item" data-reveal="right">
-            <div class="timeline__node"></div>
-            <div class="timeline__content">
-              <span class="timeline__tag">Saat Ini</span>
-              <h3>INSTITUT TEKNOLOGI GARUT</h3>
-              <p>Program Studi Informatika &bull; Kelas B</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== EXPERIENCE / JOURNEY ===== -->
-    <section id="journey" class="section">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="section-eyebrow"><span class="section-eyebrow__num">05</span> Milestones</span>
-          <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
-        </div>
-
-        <div class="journey__track">
-          <div class="journey__item" data-reveal data-reveal-delay="0">
-            <span class="journey__year gradient-text">2023</span>
-            <div class="journey__dot"></div>
-            <p>Started learning creative design and animation.</p>
-          </div>
-          <div class="journey__item" data-reveal data-reveal-delay="0.1">
-            <span class="journey__year gradient-text">2024</span>
-            <div class="journey__dot"></div>
-            <p>Developed interest in programming and technology.</p>
-          </div>
-          <div class="journey__item" data-reveal data-reveal-delay="0.2">
-            <span class="journey__year gradient-text">2025</span>
-            <div class="journey__dot"></div>
-            <p>Started studying Informatics.</p>
-          </div>
-          <div class="journey__item" data-reveal data-reveal-delay="0.3">
-            <span class="journey__year gradient-text">2026</span>
-            <div class="journey__dot"></div>
-            <p>Developing web, graphics, networking, and programming skills.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="section-eyebrow"><span class="section-eyebrow__num">06</span> Let's Work Together</span>
+          <span class="section-eyebrow">Let's Work Together</span>
           <h2 class="section-title">Have a project in mind?<br /><span class="gradient-text">Let's create something amazing.</span></h2>
         </div>
 
